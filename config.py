@@ -72,6 +72,9 @@ with open("data/deploy/bytecode.txt", "r") as file:
 with open("data/abi/zkstars/abi.json", "r") as file:
     ZKSTARS_ABI = json.load(file)
 
+with open("data/abi/scroll_citizen/abi.json", "r") as file:
+    SCROLL_CITIZEN_ABI = json.load(file)
+
 with open("data/abi/rubyscore/abi.json", "r") as file:
     RUBYSCORE_VOTE_ABI = json.load(file)
 

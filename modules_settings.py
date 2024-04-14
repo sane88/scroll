@@ -422,6 +422,46 @@ async def mint_zkstars(account_id, key, recipient):
     await zkkstars.mint(contracts, mint_min, mint_max, mint_all, sleep_from, sleep_to)
 
 
+async def mint_citizen(account_id, key, recipient):
+    """
+    Mint Scroll Citizen NFT
+    """
+
+    contracts = [
+        "0xc519d9d47c003b6274e20cfe21d58fee1efa7a0e",
+        "0x1249e38bb84aa3cbe6f4506a85b6831ef49ed48f",
+        "0xcde5e31d0c7348161b76579a6e25b8874de91434",
+        "0xd4eac5a09e5e8ac8e94f62e46b5d9e808e577d2e",
+        "0x51c8b85aedb821712c7115f36d252018951c4b16",
+        "0x6982d37e2bc0de66ce744a65a79c57926f11a947",
+        "0xf4647c674e32506809f77cf3236ed8034e817cc9",
+        "0x6b4772a613a63cbdb15c767bd604e9f5ecf60fcd",
+        "0x4395df30ef87a2c23ab393fe0bf1f2d2ef6eefc1",
+        "0x36c9724d98dc3f46676bf213da318e556bcc3d16",
+        "0x80151e432f5c6d6c89427bceee6738bcc61e3fa6",
+        "0xd4215d6aff866151c2df3ebed8ff0cc084b7d2cf",
+        "0xde2fea1c76d1d08b0055b8ae6bc4ce8a31403192",
+        "0xbdb2cd55421ecd520a04be90b6dee93689a203de",
+        "0x65665e3275e2a122c61f953929ca13c1bb5a593b",
+        "0x07e2f41b117b34dda4c7044242e903053a7ea025",
+        "0x6de8a54d6771325e53e53e85aaf614392839caff",
+        "0x9efd036f4f30d9802d4dc1b7ece292d2ef896883",
+        "0x57324f9d28d0b89ec980b0b0c6a432c761faf6b2",
+        "0x2ab5a55aac0df0087fb2b352372fe19e84f46041"
+    ]
+
+    mint_min = 1
+    mint_max = 1
+
+    mint_all = False
+
+    sleep_from = 5
+    sleep_to = 10
+
+    citizen = ScrollCitizen(account_id, key, recipient)
+    await citizen.mint(contracts, mint_min, mint_max, mint_all, sleep_from, sleep_to)
+
+
 async def send_message(account_id, key, recipient):
     """
     Send message with L2Telegraph

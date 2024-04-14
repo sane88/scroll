@@ -12,6 +12,7 @@ from .layerbank import LayerBank
 from .zerius import Zerius
 from .l2pass import L2Pass
 from .zkstars import ZkStars
+from .scrollcitizen import ScrollCitizen
 from .dmail import Dmail
 from .omnisea import Omnisea
 from .nfts2me import Minter
