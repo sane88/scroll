@@ -120,6 +120,29 @@ async def bridge_nitro(account_id, key, recipient):
     nitro = Nitro(account_id=account_id, private_key=key, chain=from_chain, recipient=recipient)
     await nitro.bridge(to_chain, min_amount, max_amount, decimal, all_amount, min_percent, max_percent)
 
+async def bridge_nitro_2(account_id, key, recipient):
+    """
+    Bridge from nitro
+    ______________________________________________________
+    from_chain – ethereum, arbitrum, optimism, zksync, scroll, base, linea | Select one
+    to_chain – ethereum, arbitrum, optimism, zksync, scroll, base, linea | Select one
+    """
+
+    from_chain = "scroll"
+    to_chain = "optimism"
+
+    min_amount = 0.005
+    max_amount = 0.0051
+    decimal = 4
+
+    all_amount = False
+
+    min_percent = 5
+    max_percent = 10
+
+    nitro = Nitro(account_id=account_id, private_key=key, chain=from_chain, recipient=recipient)
+    await nitro.bridge(to_chain, min_amount, max_amount, decimal, all_amount, min_percent, max_percent)
+
 
 async def wrap_eth(account_id, key, recipient):
     """
@@ -507,7 +530,7 @@ async def make_transfer(_id, key, recipient):
     min_percent = 10
     max_percent = 10
 
-    transfer = Transfer(_id, key, recipient)
+    transfer = Transfer(_id, key, recipient, "optimism")
     await transfer.transfer(min_amount, max_amount, decimal, all_amount, min_percent, max_percent)
 
 
